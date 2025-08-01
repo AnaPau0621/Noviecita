@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Para ti, mi noviecita preciosa 💖</title>
+    <title>Para ti, mi novia hermosa 💖</title>
     <style>
       body {
         background-color: #ffe4ec;
@@ -25,19 +25,49 @@
         border: none;
         border-radius: 10px;
         cursor: pointer;
+        transition: background-color 0.3s;
+      }
+      button:disabled {
+        background-color: #ff1493;
+        cursor: default;
+      }
+      img {
+        margin-top: 20px;
+        width: 300px;
+        border-radius: 15px;
       }
     </style>
   </head>
   <body>
-    <h1>Hola, mi vida 💗</h1>
+    <h1>Hola, mi princesa 💗</h1>
     <p>Aunque estemos lejos, quería recordarte cuánto te amo.</p>
-    <button onclick="mostrarMensaje()">Haz clic aquí 💌</button>
-    <p id="mensaje" style="margin-top: 30px;"></p>
+    <button id="boton" onclick="mostrarMensaje()">Haz clic aquí 💌</button>
+    <p id="mensaje" style="margin-top: 30px; font-weight: bold;"></p>
 
     <script>
       function mostrarMensaje() {
-        document.getElementById('mensaje').innerHTML =
-          "Eres lo mejor que me ha pasado, feliz día de la novia. Te amo con todo mi corazón 💖";
+        const mensaje = "Eres lo mejor que me ha pasado. Te amo con todo mi corazón 💖";
+        let i = 0;
+        const p = document.getElementById('mensaje');
+        p.innerHTML = "";
+        const btn = document.getElementById('boton');
+        btn.disabled = true;
+        btn.innerText = "¡Te amo ❤️";
+
+        const interval = setInterval(() => {
+          p.innerHTML += mensaje.charAt(i);
+          i++;
+          if (i > mensaje.length) {
+            clearInterval(interval);
+            mostrarImagen();
+          }
+        }, 100);
+      }
+
+      function mostrarImagen() {
+        const img = document.createElement('img');
+        img.src = 'https://media.giphy.com/media/l0MYt5jPR6QX5pnqM/giphy.gif'; // Gif corazones
+        document.body.appendChild(img);
       }
     </script>
   </body>
