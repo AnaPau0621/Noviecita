@@ -78,18 +78,21 @@
       }
 
       function mostrarImagen() {
-        const contenedor = document.getElementById('contenedorFinal');
+  const contenedor = document.getElementById('contenedorFinal');
 
-        const img = document.createElement('img');
-        img.src = 'https://media.giphy.com/media/v1.Y2lkPWVjZjA1ZTQ3eTVnaHJmZnhhNGZqbTk3ODQ2NXhqM2d2OGNreWtvNjN1NXpmYTgzZSZlcD12MV9naWZzX3NlYXJjaCZjdD1n/NUkNjO6J6kwiLuethv/giphy.gif';
-        contenedor.appendChild(img);
+  const img = document.createElement('img');
+  img.src = 'https://media.giphy.com/media/v1.Y2lkPWVjZjA1ZTQ3eTVnaHJmZnhhNGZqbTk3ODQ2NXhqM2d2OGNreWtvNjN1NXpmYTgzZSZlcD12MV9naWZzX3NlYXJjaCZjdD1n/NUkNjO6J6kwiLuethv/giphy.gif';
 
-        const nuevoBoton = document.createElement('button');
-        nuevoBoton.style.marginTop = "30px";
-        nuevoBoton.textContent = "Haz clic para ver mi corazón 💓";
-        nuevoBoton.onclick = mostrarCorazon;
-        contenedor.appendChild(nuevoBoton);
-      }
+  // Cuando la imagen haya cargado completamente
+  img.onload = () => {
+    const nuevoBoton = document.createElement('button');
+    nuevoBoton.textContent = "Haz clic para ver mi corazón 💓";
+    nuevoBoton.style.marginTop = "30px";
+    nuevoBoton.onclick = mostrarCorazon;
+    contenedor.appendChild(nuevoBoton);
+  };
+
+  contenedor.appendChild(img); // Mostrar primero la imagen
 
       function mostrarCorazon() {
         const corazon = `
