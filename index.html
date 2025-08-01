@@ -86,31 +86,34 @@
   // Cuando la imagen haya cargado completamente
   img.onload = () => {
     const nuevoBoton = document.createElement('button');
-    nuevoBoton.textContent = "Haz clic para ver mi corazón 💓";
     nuevoBoton.style.marginTop = "30px";
+    nuevoBoton.textContent = "Haz clic para ver mi corazón 💓";
     nuevoBoton.onclick = mostrarCorazon;
     contenedor.appendChild(nuevoBoton);
   };
 
   contenedor.appendChild(img); // Mostrar primero la imagen
-
       function mostrarCorazon() {
         const corazon = `
-      te amo     te amo     te amo     te amo
-    te amo   te amo   te amo   te amo   te amo
-  te amo   te amo   te amo   te amo te amo te amo
-    te amo   te amo    te amo   te amo   te amo
-      te amo    te amo    te amo   te amo
-         te amo    te amo    te amo
-           te amo     te amo
-                te amo`;
-  
+         Jocelyn     Jocelyn     Jocelyn
+      Jocelyn     Jocelyn     Jocelyn     Jocelyn
+   Jocelyn     Jocelyn     Jocelyn     Jocelyn     Jocelyn
+      Jocelyn     Jocelyn     Jocelyn     Jocelyn
+         Jocelyn     Jocelyn     Jocelyn
+            Jocelyn     Jocelyn
+               Jocelyn`;
+
         const pre = document.createElement('pre');
         pre.textContent = corazon;
-        pre.style.fontSize = "24px"; 
+        pre.style.fontSize = "24px";
+        pre.style.fontFamily = "monospace";
+        pre.style.color = "#d63384";
+        pre.style.textAlign = "center";
+        pre.style.marginTop = "30px";
         document.body.appendChild(pre);
       }
     </script>
   </body>
 </html>
+
 
