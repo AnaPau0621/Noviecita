@@ -38,11 +38,14 @@
         border-radius: 15px;
       }
       pre {
-        font-size: 16px;
+        font-size: 22px; /* Ajusta este tamaño si quieres más grande o más pequeño */
         color: #d63384;
-        margin-top: 20px;
+        margin-top: 30px;
         white-space: pre;
         font-family: monospace;
+      }
+      #contenedorFinal {
+        margin-top: 30px;
       }
     </style>
   </head>
@@ -51,6 +54,8 @@
     <p>Aunque estemos lejos, quería recordarte cuánto te amo.</p>
     <button id="boton" onclick="mostrarMensaje()">Haz clic aquí 💌</button>
     <p id="mensaje" style="margin-top: 30px; font-weight: bold;"></p>
+
+    <div id="contenedorFinal"></div> <!-- Aquí se pondrá el gif y botón final -->
 
     <script>
       function mostrarMensaje() {
@@ -73,15 +78,16 @@
       }
 
       function mostrarImagen() {
+        const contenedor = document.getElementById('contenedorFinal');
+
         const img = document.createElement('img');
         img.src = 'https://media.giphy.com/media/v1.Y2lkPWVjZjA1ZTQ3eTVnaHJmZnhhNGZqbTk3ODQ2NXhqM2d2OGNreWtvNjN1NXpmYTgzZSZlcD12MV9naWZzX3NlYXJjaCZjdD1n/NUkNjO6J6kwiLuethv/giphy.gif';
-        document.body.appendChild(img);
+        contenedor.appendChild(img);
 
-        // Crear nuevo botón
         const nuevoBoton = document.createElement('button');
         nuevoBoton.textContent = "Haz clic para ver mi corazón 💓";
         nuevoBoton.onclick = mostrarCorazon;
-        document.body.appendChild(nuevoBoton);
+        contenedor.appendChild(nuevoBoton);
       }
 
       function mostrarCorazon() {
