@@ -26,6 +26,7 @@
         border-radius: 10px;
         cursor: pointer;
         transition: background-color 0.3s;
+        margin-top: 20px;
       }
       button:disabled {
         background-color: #ff1493;
@@ -35,6 +36,13 @@
         margin-top: 20px;
         width: 300px;
         border-radius: 15px;
+      }
+      pre {
+        font-size: 16px;
+        color: #d63384;
+        margin-top: 20px;
+        white-space: pre;
+        font-family: monospace;
       }
     </style>
   </head>
@@ -66,8 +74,32 @@
 
       function mostrarImagen() {
         const img = document.createElement('img');
-        img.src = 'https://media.giphy.com/media/v1.Y2lkPWVjZjA1ZTQ3eTVnaHJmZnhhNGZqbTk3ODQ2NXhqM2d2OGNreWtvNjN1NXpmYTgzZSZlcD12MV9naWZzX3NlYXJjaCZjdD1n/NUkNjO6J6kwiLuethv/giphy.gif'; // Gif corazones
+        img.src = 'https://media.giphy.com/media/v1.Y2lkPWVjZjA1ZTQ3eTVnaHJmZnhhNGZqbTk3ODQ2NXhqM2d2OGNreWtvNjN1NXpmYTgzZSZlcD12MV9naWZzX3NlYXJjaCZjdD1n/NUkNjO6J6kwiLuethv/giphy.gif';
         document.body.appendChild(img);
+
+        // Crear nuevo botón
+        const nuevoBoton = document.createElement('button');
+        nuevoBoton.textContent = "Haz clic para ver mi corazón 💓";
+        nuevoBoton.onclick = mostrarCorazon;
+        document.body.appendChild(nuevoBoton);
+      }
+
+      function mostrarCorazon() {
+        const corazon = `
+      te amo     te amo     te amo     te amo
+    te amo   te amo   te amo   te amo   te amo
+  te amo   te amo   te amo   te amo   te amo   te amo
+    te amo   te amo   te amo   te amo   te amo
+      te amo   te amo   te amo   te amo
+        te amo   te amo   te amo
+          te amo   te amo
+            te amo`;
+
+        const pre = document.createElement('pre');
+        pre.textContent = corazon;
+        document.body.appendChild(pre);
       }
     </script>
   </body>
+</html>
+
