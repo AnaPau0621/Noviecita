@@ -85,6 +85,7 @@
         contenedor.appendChild(img);
 
         const nuevoBoton = document.createElement('button');
+        nuevoBoton.style.marginTop = "30px";
         nuevoBoton.textContent = "Haz clic para ver mi corazón 💓";
         nuevoBoton.onclick = mostrarCorazon;
         contenedor.appendChild(nuevoBoton);
@@ -94,15 +95,16 @@
         const corazon = `
       te amo     te amo     te amo     te amo
     te amo   te amo   te amo   te amo   te amo
-  te amo   te amo   te amo   te amo   te amo   te amo
-    te amo   te amo   te amo   te amo   te amo
-      te amo   te amo   te amo   te amo
-        te amo   te amo   te amo
-          te amo   te amo
-            te amo`;
-
+  te amo   te amo   te amo   te amo te amo te amo
+    te amo   te amo    te amo   te amo   te amo
+      te amo    te amo    te amo   te amo
+         te amo    te amo    te amo
+           te amo     te amo
+                te amo`;
+  
         const pre = document.createElement('pre');
         pre.textContent = corazon;
+        pre.style.fontSize = "24px"; 
         document.body.appendChild(pre);
       }
     </script>
