@@ -1,73 +1,90 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title>Para ti, mi novia hermosa 💖</title>
-    <style>
-      body {
-        background-color: #ffe4ec;
-        font-family: 'Arial', sans-serif;
-        text-align: center;
-        padding-top: 100px;
-      }
-      h1 {
-        color: #ff1493;
-        font-size: 50px;
-      }
-      p {
-        font-size: 24px;
-        color: #555;
-      }
-      button {
-        padding: 15px 30px;
-        font-size: 20px;
-        background-color: #ff69b4;
-        color: white;
-        border: none;
-        border-radius: 10px;
-        cursor: pointer;
-        transition: background-color 0.3s;
-      }
-      button:disabled {
-        background-color: #ff1493;
-        cursor: default;
-      }
-      img {
-        margin-top: 20px;
-        width: 300px;
-        border-radius: 15px;
-      }
-    </style>
-  </head>
-  <body>
-    <h1>Hola, mi princesa 💗</h1>
-    <p>Aunque estemos lejos, quería recordarte cuánto te amo.</p>
-    <button id="boton" onclick="mostrarMensaje()">Haz clic aquí 💌</button>
-    <p id="mensaje" style="margin-top: 30px; font-weight: bold;"></p>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Para ti, mi novia hermosa 💖</title>
+  <style>
+    body {
+      background-color: #ffe4ec;
+      font-family: 'Arial', sans-serif;
+      text-align: center;
+      padding-top: 80px;
+    }
+    h1 {
+      color: #ff1493;
+      font-size: 50px;
+    }
+    p {
+      font-size: 24px;
+      color: #555;
+    }
+    button {
+      padding: 15px 30px;
+      font-size: 20px;
+      background-color: #ff69b4;
+      color: white;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      margin-top: 20px;
+    }
+    #gif-container, #boton-extra, #mensaje-final {
+      display: none;
+      transition: all 0.6s ease;
+      opacity: 0;
+    }
 
-    <script>
-      function mostrarMensaje() {
-        const mensaje = "Eres lo mejor que me ha pasado. Te amo con todo mi corazón 💖";
-        let i = 0;
-        const p = document.getElementById('mensaje');
-        p.innerHTML = "";
-        const btn = document.getElementById('boton');
-        btn.disabled = true;
-        btn.innerText = "Te amo ❤️";
+    .mostrar {
+      display: block;
+      opacity: 1;
+      transform: translateY(0px);
+    }
 
-        const interval = setInterval(() => {
-          p.innerHTML += mensaje.charAt(i);
-          i++;
-          if (i > mensaje.length) {
-            clearInterval(interval);
-            mostrarImagen();
-          }
-        }, 100);
-      }
+    #mensaje-final {
+      font-size: 22px;
+      margin-top: 20px;
+      color: #d1008f;
+    }
+  </style>
+</head>
+<body>
+  <h1>Hola, mi princesa 💗</h1>
+  <p>Aunque estemos lejos, quería recordarte cuánto te amo.</p>
+  <button onclick="mostrarMensaje()">Haz clic aquí 💌</button>
+  <p id="mensaje" style="margin-top: 30px;"></p>
 
-      function mostrarImagen() {
-        const img = document.createElement('img');
-        img.src = 'https://media.giphy.com/media/v1.Y2lkPWVjZjA1ZTQ3eTVnaHJmZnhhNGZqbTk3ODQ2NXhqM2d2OGNreWtvNjN1NXpmYTgzZSZlcD12MV9naWZzX3NlYXJjaCZjdD1n/NUkNjO6J6kwiLuethv/giphy.gif'; // Gif corazones
-        document.body.appendChild(img);
-      }
-    </script>
-  </body>
+  <div id="gif-container" style="margin-top: 30px;">
+    <img src="https://media.giphy.com/media/l0MYt5jPR6QX5pnqM/giphy.gif" alt="Te amo" width="250" />
+  </div>
+
+  <div id="boton-extra">
+    <button onclick="mostrarMensajeFinal()">Sigue leyendo 💫</button>
+  </div>
+
+  <p id="mensaje-final"></p>
+
+  <script>
+    function mostrarMensaje() {
+      document.getElementById('mensaje').innerHTML =
+        "Eres lo mejor que me ha pasado. Te amo con todo mi corazón 💖";
+      const gif = document.getElementById('gif-container');
+      const botonExtra = document.getElementById('boton-extra');
+
+      setTimeout(() => {
+        gif.classList.add('mostrar');
+      }, 500);
+
+      setTimeout(() => {
+        botonExtra.classList.add('mostrar');
+      }, 1500);
+    }
+
+    function mostrarMensajeFinal() {
+      const mensajeFinal = document.getElementById('mensaje-final');
+      mensajeFinal.innerHTML =
+        "Gracias por existir, por ser tú y por estar en mi vida. Siempre contigo, mi amor 🥹💘";
+      mensajeFinal.classList.add('mostrar');
+    }
+  </script>
+</body>
+</html>
