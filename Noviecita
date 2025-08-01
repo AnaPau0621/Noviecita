@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Para ti, mi noviecita preciosa 💖</title>
+    <style>
+      body {
+        background-color: #ffe4ec;
+        font-family: 'Arial', sans-serif;
+        text-align: center;
+        padding-top: 100px;
+      }
+      h1 {
+        color: #ff1493;
+        font-size: 50px;
+      }
+      p {
+        font-size: 24px;
+        color: #555;
+      }
+      button {
+        padding: 15px 30px;
+        font-size: 20px;
+        background-color: #ff69b4;
+        color: white;
+        border: none;
+        border-radius: 10px;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Hola, mi vida 💗</h1>
+    <p>Aunque estemos lejos, quería recordarte cuánto te amo.</p>
+    <button onclick="mostrarMensaje()">Haz clic aquí 💌</button>
+    <p id="mensaje" style="margin-top: 30px;"></p>
+
+    <script>
+      function mostrarMensaje() {
+        document.getElementById('mensaje').innerHTML =
+          "Eres lo mejor que me ha pasado, feliz día de la novia. Te amo con todo mi corazón 💖";
+      }
+    </script>
+  </body>
+</html>
