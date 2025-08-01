@@ -38,24 +38,25 @@
         border-radius: 15px;
       }
       pre {
-        font-size: 22px; /* Ajusta este tamaño si quieres más grande o más pequeño */
-        color: #d63384;
-        margin-top: 30px;
-        white-space: pre;
         font-family: monospace;
-      }
-      #contenedorFinal {
-        margin-top: 30px;
+        font-size: 14px;
+        color: #ff1493;
+        margin-top: 20px;
+        white-space: pre;
       }
     </style>
   </head>
   <body>
-    <h1>Mi princesa 💗</h1>
+    <h1>Hola, mi princesa 💗</h1>
     <p>Aunque estemos lejos, quería recordarte cuánto te amo.</p>
     <button id="boton" onclick="mostrarMensaje()">Haz clic aquí 💌</button>
     <p id="mensaje" style="margin-top: 30px; font-weight: bold;"></p>
 
-    <div id="contenedorFinal"></div> <!-- Aquí se pondrá el gif y botón final -->
+    <!-- Segundo botón oculto inicialmente -->
+    <button id="botonCorazon" style="display: none;" onclick="mostrarCorazon()">Haz clic para ver mi corazón 💞</button>
+
+    <!-- Lugar donde se mostrará el corazón -->
+    <pre id="corazon"></pre>
 
     <script>
       function mostrarMensaje() {
@@ -78,42 +79,34 @@
       }
 
       function mostrarImagen() {
-  const contenedor = document.getElementById('contenedorFinal');
+        const img = document.createElement('img');
+        img.src = 'https://media.giphy.com/media/v1.Y2lkPWVjZjA1ZTQ3eTVnaHJmZnhhNGZqbTk3ODQ2NXhqM2d2OGNreWtvNjN1NXpmYTgzZSZlcD12MV9naWZzX3NlYXJjaCZjdD1n/NUkNjO6J6kwiLuethv/giphy.gif';
+        document.body.appendChild(img);
 
-  const img = document.createElement('img');
-  img.src = 'https://media.giphy.com/media/v1.Y2lkPWVjZjA1ZTQ3eTVnaHJmZnhhNGZqbTk3ODQ2NXhqM2d2OGNreWtvNjN1NXpmYTgzZSZlcD12MV9naWZzX3NlYXJjaCZjdD1n/NUkNjO6J6kwiLuethv/giphy.gif';
+        // Mostrar el segundo botón después de 2.5 segundos
+        setTimeout(() => {
+          document.getElementById('botonCorazon').style.display = 'inline-block';
+        }, 2500);
+      }
 
-  // Cuando la imagen haya cargado completamente
-  img.onload = () => {
-    const nuevoBoton = document.createElement('button');
-    nuevoBoton.style.marginTop = "30px";
-    nuevoBoton.textContent = "Haz clic para ver mi corazón 💓";
-    nuevoBoton.onclick = mostrarCorazon;
-    contenedor.appendChild(nuevoBoton);
-  };
-
-  contenedor.appendChild(img); // Mostrar primero la imagen
       function mostrarCorazon() {
         const corazon = `
-         Jocelyn     Jocelyn     Jocelyn
-      Jocelyn     Jocelyn     Jocelyn     Jocelyn
-   Jocelyn     Jocelyn     Jocelyn     Jocelyn     Jocelyn
-      Jocelyn     Jocelyn     Jocelyn     Jocelyn
-         Jocelyn     Jocelyn     Jocelyn
-            Jocelyn     Jocelyn
-               Jocelyn`;
-
-        const pre = document.createElement('pre');
-        pre.textContent = corazon;
-        pre.style.fontSize = "24px";
-        pre.style.fontFamily = "monospace";
-        pre.style.color = "#d63384";
-        pre.style.textAlign = "center";
-        pre.style.marginTop = "30px";
-        document.body.appendChild(pre);
+       Jocelyn Jocelyn Jocelyn  Jocelyn 
+    Jocelyn         Jocelyn         Jocelyn   
+ Jocelyn                              Jocelyn
+  Jocelyn                           Jocelyn
+    Jocelyn                        Jocelyn
+      Jocelyn                    Jocelyn
+         Jocelyn                Jocelyn
+           Jocelyn             Jocelyn
+             Jocelyn         Jocelyn
+               Jocelyn     Jocelyn
+                 Jocelyn Jocelyn
+                     Jocelyn
+        `;
+        document.getElementById('corazon').innerText = corazon;
       }
     </script>
   </body>
 </html>
-
 
