@@ -56,7 +56,13 @@
       }
 
       #corazon {
-        animation: latido 1s ease-in-out 2;
+        animation: latido 4s ease-in-out 2;
+      }
+      #contenedor-final {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 30px;
       }
     </style>
   </head>
@@ -66,13 +72,10 @@
     <button id="boton" onclick="mostrarMensaje()">Haz clic aquí 💌</button>
     <p id="mensaje" style="margin-top: 30px; font-weight: bold;"></p>
 
-    <!-- Contenedor donde aparecerán imagen, corazón y botones -->
-    <div id="contenedor-final" style="margin-top: 30px;"></div>
+    <div id="contenedor-final"></div>
 
-    <!-- Segundo botón oculto inicialmente -->
     <button id="botonCorazon" style="display: none;" onclick="mostrarCorazon()">Haz clic para ver mi corazón 💞</button>
 
-    <!-- Corazón oculto inicialmente -->
     <pre id="corazon"></pre>
 
     <script>
@@ -114,22 +117,22 @@
 
       function mostrarCorazon() {
         const corazon = `
-          Jocelyn     Jocelyn
-       Jocelyn  Jocelyn  Jocelyn
-     Jocelyn             Jocelyn
-    Jocelyn               Jocelyn
-    Jocelyn               Jocelyn
-     Jocelyn             Jocelyn
-       Jocelyn         Jocelyn
-         Jocelyn     Jocelyn
-           Jocelyn Jocelyn
-              Jocelyn
+          Jocelyn      Jocelyn
+       Jocelyn  Jocelyn      Jocelyn
+     Jocelyn                  Jocelyn
+    Jocelyn                    Jocelyn
+    Jocelyn                    Jocelyn
+     Jocelyn                  Jocelyn
+       Jocelyn              Jocelyn
+         Jocelyn          Jocelyn
+           Jocelyn      Jocelyn
+               Jocelyn
         `;
 
         const pre = document.getElementById('corazon');
         pre.innerText = corazon;
         pre.style.display = "inline-block";
-        pre.style.animation = "latido 1s ease-in-out 2";
+        pre.style.animation = "latido 3s ease-in-out 2";
 
         document.getElementById('contenedor-final').appendChild(pre);
       }
