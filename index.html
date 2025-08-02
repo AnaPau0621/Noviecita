@@ -39,10 +39,24 @@
       }
       pre {
         font-family: monospace;
-        font-size: 14px;
+        font-size: 24px; /* Letra más grande */
         color: #ff1493;
         margin-top: 20px;
         white-space: pre;
+        display: inline-block;
+      }
+
+      /* Animación del latido */
+      @keyframes latido {
+        0%   { transform: scale(1); }
+        25%  { transform: scale(1.1); }
+        50%  { transform: scale(1); }
+        75%  { transform: scale(1.1); }
+        100% { transform: scale(1); }
+      }
+
+      #corazon {
+        animation: latido 1s ease-in-out 2;
       }
     </style>
   </head>
@@ -83,7 +97,6 @@
         img.src = 'https://media.giphy.com/media/v1.Y2lkPWVjZjA1ZTQ3eTVnaHJmZnhhNGZqbTk3ODQ2NXhqM2d2OGNreWtvNjN1NXpmYTgzZSZlcD12MV9naWZzX3NlYXJjaCZjdD1n/NUkNjO6J6kwiLuethv/giphy.gif';
         document.body.appendChild(img);
 
-        // Mostrar el segundo botón después de 2.5 segundos
         setTimeout(() => {
           document.getElementById('botonCorazon').style.display = 'inline-block';
         }, 2500);
@@ -91,22 +104,23 @@
 
       function mostrarCorazon() {
         const corazon = `
-       Jocelyn Jocelyn Jocelyn  Jocelyn 
-    Jocelyn         Jocelyn         Jocelyn   
- Jocelyn                              Jocelyn
-  Jocelyn                           Jocelyn
-    Jocelyn                        Jocelyn
-      Jocelyn                    Jocelyn
-         Jocelyn                Jocelyn
-           Jocelyn             Jocelyn
-             Jocelyn         Jocelyn
-               Jocelyn     Jocelyn
-                 Jocelyn Jocelyn
-                     Jocelyn
+          Jocelyn     Jocelyn
+       Jocelyn  Jocelyn  Jocelyn
+     Jocelyn             Jocelyn
+    Jocelyn               Jocelyn
+    Jocelyn               Jocelyn
+     Jocelyn             Jocelyn
+       Jocelyn         Jocelyn
+         Jocelyn     Jocelyn
+           Jocelyn Jocelyn
+              Jocelyn
         `;
-        document.getElementById('corazon').innerText = corazon;
+        const pre = document.getElementById('corazon');
+        pre.innerText = corazon;
+        pre.style.animation = "latido 1s ease-in-out 2";
       }
     </script>
   </body>
 </html>
+
 
